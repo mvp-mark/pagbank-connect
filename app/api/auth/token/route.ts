@@ -55,6 +55,7 @@ export async function POST(request: NextRequest) {
 
     // Return the access token (in production, consider storing securely)
     return NextResponse.json({
+      account_id: tokenData.account_id,
       access_token: tokenData.access_token,
       token_type: tokenData.token_type,
       expires_in: tokenData.expires_in,

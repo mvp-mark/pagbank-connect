@@ -2,20 +2,26 @@ import { type NextRequest, NextResponse } from "next/server"
 
 export async function GET(request: NextRequest) {
   try {
-    const authorization = request.headers.get("authorization")
+    const access_token = request.headers.get("access_token")
+    const account_id = request.headers.get("account_id")
 
-    if (!authorization || !authorization.startsWith("Bearer ")) {
-      return NextResponse.json({ error: "Authorization token required" }, { status: 401 })
-    }
+    // if (!authorization || !authorization.startsWith("Bearer ")) {
+    //   return NextResponse.json({ error: "Authorization token required" }, { status: 401 })
+    // }
 
-    const token = authorization.split(" ")[1] || process.env.TOKEN
+    const token = process.env.TOKEN
 
     // Fetch account information from PagBank API
-    const accountResponse = await fetch("https://sandbox.api.pagseguro.com/accounts/me", {
-      headers: {
-        Authorization: `Bearer ${token}`,
-        Accept: "application/json",
-      },
+    const headers: Record<string, string> = {
+      Authorization: `Bearer ${token}`,
+      Accept: "application/json",
+    }
+    if (access_token) {
+      headers['x-client-token'] = access_token
+    }
+
+    const accountResponse = await fetch("https://sandbox.api.pagseguro.com/accounts/"+ account_id, {
+      headers,
     })
 
     if (!accountResponse.ok) {
@@ -27,7 +33,7 @@ export async function GET(request: NextRequest) {
     // Return formatted account information
     return NextResponse.json({
       id: accountData.id || "N/A",
-      name: accountData.name || "N/A",
+      name: accountData.person.name || "N/A",
       email: accountData.email || "N/A",
       status: accountData.status || "active",
     })
