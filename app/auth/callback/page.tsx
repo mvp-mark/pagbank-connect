@@ -25,21 +25,21 @@ export default function CallbackPage() {
       // Handle authorization error
       if (error) {
         setStatus("error")
-        setMessage(`Authorization failed: ${error}`)
+        setMessage(`Falha na autorização: ${error}`)
         return
       }
 
       // Validate state parameter
       if (!state || state !== storedState) {
         setStatus("error")
-        setMessage("Invalid state parameter. Possible CSRF attack.")
+        setMessage("Parâmetro de estado inválido. Possível ataque CSRF.")
         return
       }
 
       // Handle missing authorization code
       if (!code) {
         setStatus("error")
-        setMessage("Authorization code not received.")
+        setMessage("Código de autorização não recebido.")
         return
       }
 
@@ -57,11 +57,11 @@ export default function CallbackPage() {
 
         if (response.ok) {
           setStatus("success")
-          setMessage("Successfully connected to PagBank!")
+          setMessage("Conexão com o PagBank realizada com sucesso!")
           setAccessToken(data.access_token)
 
           // Store token securely (in a real app, use httpOnly cookies)
-          localStorage.setItem("pagbank_access_token", data.access_token)
+          localStorage.setItem("pagbank_access_token", JSON.stringify(data))
 
           // Clean up state
           localStorage.removeItem("pagbank_oauth_state")
@@ -72,11 +72,11 @@ export default function CallbackPage() {
           }, 3000)
         } else {
           setStatus("error")
-          setMessage(data.error || "Failed to exchange authorization code")
+          setMessage(data.error || "Falha ao trocar o código de autorização")
         }
       } catch (err) {
         setStatus("error")
-        setMessage("Network error occurred during token exchange")
+        setMessage("Ocorreu um erro de rede durante a troca do token")
       }
     }
 
@@ -88,14 +88,14 @@ export default function CallbackPage() {
       <div className="w-full max-w-md">
         <Card>
           <CardHeader className="text-center">
-            <CardTitle className="text-2xl">Authorization Status</CardTitle>
-            <CardDescription>Processing your PagBank connection</CardDescription>
+            <CardTitle className="text-2xl">Status da Autorização</CardTitle>
+            <CardDescription>Processando sua conexão com o PagBank</CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">
             {status === "loading" && (
               <div className="text-center space-y-4">
                 <Loader2 className="h-8 w-8 animate-spin mx-auto text-blue-600" />
-                <p className="text-sm text-gray-600">Processing authorization...</p>
+                <p className="text-sm text-gray-600">Processando autorização...</p>
               </div>
             )}
 
@@ -105,9 +105,9 @@ export default function CallbackPage() {
                 <Alert className="border-green-200 bg-green-50">
                   <AlertDescription className="text-green-800">{message}</AlertDescription>
                 </Alert>
-                <p className="text-sm text-gray-600">Redirecting to dashboard...</p>
+                <p className="text-sm text-gray-600">Redirecionando para o painel...</p>
                 <Link href="/dashboard">
-                  <Button className="w-full bg-green-600 hover:bg-green-700">Go to Dashboard</Button>
+                  <Button className="w-full bg-green-600 hover:bg-green-700">Ir para o Painel</Button>
                 </Link>
               </div>
             )}
@@ -121,12 +121,12 @@ export default function CallbackPage() {
                 <div className="space-y-2">
                   <Link href="/auth/connect">
                     <Button variant="outline" className="w-full bg-transparent">
-                      Try Again
+                      Tentar Novamente
                     </Button>
                   </Link>
                   <Link href="/">
                     <Button variant="ghost" className="w-full">
-                      Back to Home
+                      Voltar para a Página Inicial
                     </Button>
                   </Link>
                 </div>

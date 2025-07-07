@@ -15,7 +15,7 @@ export default function HomePage() {
             <h1 className="text-3xl font-bold text-gray-900">PagBank Connect</h1>
           </div>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Integrate your application with PagBank's payment services securely and efficiently
+            Integre sua aplicação com os serviços de pagamento do PagBank de forma segura e eficiente
           </p>
         </header>
 
@@ -27,9 +27,9 @@ export default function HomePage() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Shield className="h-5 w-5 text-green-600" />
-                  Connect Your Account
+                  Conecte sua conta
                 </CardTitle>
-                <CardDescription>Authorize your application to access PagBank services</CardDescription>
+                <CardDescription>Autorize sua aplicação a acessar os serviços do PagBank</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="space-y-2">
@@ -37,11 +37,11 @@ export default function HomePage() {
                     OAuth 2.0
                   </Badge>
                   <p className="text-sm text-gray-600">
-                    Secure authorization using industry-standard OAuth 2.0 protocol
+                    Autorização segura utilizando o protocolo OAuth 2.0 padrão do mercado
                   </p>
                 </div>
                 <Link href="/auth/connect">
-                  <Button className="w-full bg-green-600 hover:bg-green-700">Connect with PagBank</Button>
+                  <Button className="w-full bg-green-600 hover:bg-green-700">Conectar com o PagBank</Button>
                 </Link>
               </CardContent>
             </Card>
@@ -51,27 +51,27 @@ export default function HomePage() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Zap className="h-5 w-5 text-blue-600" />
-                  Integration Features
+                  Recursos da Integração
                 </CardTitle>
-                <CardDescription>What you get with PagBank Connect</CardDescription>
+                <CardDescription>O que você recebe com o PagBank Connect</CardDescription>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3">
                   <li className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-green-500" />
-                    <span className="text-sm">Payment processing</span>
+                    <span className="text-sm">Processamento de pagamentos</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-green-500" />
-                    <span className="text-sm">Transaction management</span>
+                    <span className="text-sm">Gerenciamento de transações</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-green-500" />
-                    <span className="text-sm">Account information</span>
+                    <span className="text-sm">Informações da conta</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-green-500" />
-                    <span className="text-sm">Real-time notifications</span>
+                    <span className="text-sm">Notificações em tempo real</span>
                   </li>
                 </ul>
               </CardContent>
@@ -81,23 +81,23 @@ export default function HomePage() {
           {/* Status Section */}
           <Card className="mb-8">
             <CardHeader>
-              <CardTitle>Integration Status</CardTitle>
-              <CardDescription>Current connection status with PagBank services</CardDescription>
+              <CardTitle>Status da Integração</CardTitle>
+              <CardDescription>Estado atual da conexão com os serviços do PagBank</CardDescription>
             </CardHeader>
             <CardContent>
               <div className="flex items-center gap-2">
                 <div className="h-3 w-3 bg-red-500 rounded-full"></div>
-                <span className="text-sm text-gray-600">Not connected</span>
+                <span className="text-sm text-gray-600">Não conectado</span>
               </div>
-              <p className="text-sm text-gray-500 mt-2">Click "Connect with PagBank" to authorize your application</p>
+              <p className="text-sm text-gray-500 mt-2">Clique em "Conectar com o PagBank" para autorizar sua aplicação</p>
             </CardContent>
           </Card>
 
           {/* Documentation */}
           <Card>
             <CardHeader>
-              <CardTitle>Documentation</CardTitle>
-              <CardDescription>Learn more about PagBank Connect integration</CardDescription>
+              <CardTitle>Documentação</CardTitle>
+              <CardDescription>Saiba mais sobre a integração do PagBank Connect</CardDescription>
             </CardHeader>
             <CardContent>
               <div className="grid sm:grid-cols-2 gap-4">
@@ -107,11 +107,11 @@ export default function HomePage() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    API Documentation
+                    Documentação da API
                   </a>
                 </Button>
                 <Button variant="outline" asChild>
-                  <Link href="/docs">Integration Guide</Link>
+                  <Link href="/docs">Guia de Integração</Link>
                 </Button>
               </div>
             </CardContent>

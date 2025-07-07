@@ -36,7 +36,7 @@ export default function ConnectPage() {
       // Redirect to PagBank authorization
       window.location.href = authUrl.toString()
     } catch (err) {
-      setError("Failed to initiate connection. Please try again.")
+      setError("Falha ao iniciar a conexão. Tente novamente.")
       setIsConnecting(false)
     }
   }
@@ -50,8 +50,8 @@ export default function ConnectPage() {
       <div className="w-full max-w-md">
         <Card>
           <CardHeader className="text-center">
-            <CardTitle className="text-2xl">Connect to PagBank</CardTitle>
-            <CardDescription>Authorize your application to access PagBank services</CardDescription>
+            <CardTitle className="text-2xl">Conectar ao PagBank</CardTitle>
+            <CardDescription>Autorize seu aplicativo a acessar os serviços do PagBank</CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">
             {error && (
@@ -62,12 +62,12 @@ export default function ConnectPage() {
 
             <div className="space-y-4">
               <div className="text-sm text-gray-600">
-                <p className="font-medium mb-2">This integration will allow:</p>
+                <p className="font-medium mb-2">Esta integração permitirá:</p>
                 <ul className="space-y-1 text-xs">
-                  <li>• Read payment information</li>
-                  <li>• Process payments</li>
-                  <li>• Access account details</li>
-                  <li>• Receive transaction notifications</li>
+                  <li>• Ler informações de pagamento</li>
+                  <li>• Processar pagamentos</li>
+                  <li>• Acessar detalhes da conta</li>
+                  <li>• Receber notificações de transações</li>
                 </ul>
               </div>
 
@@ -79,12 +79,12 @@ export default function ConnectPage() {
                 {isConnecting ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                    Connecting...
+                    Conectando...
                   </>
                 ) : (
                   <>
                     <ExternalLink className="mr-2 h-4 w-4" />
-                    Authorize with PagBank
+                    Autorizar com PagBank
                   </>
                 )}
               </Button>
@@ -92,13 +92,13 @@ export default function ConnectPage() {
               <div className="text-center">
                 <Link href="/" className="inline-flex items-center text-sm text-gray-500 hover:text-gray-700">
                   <ArrowLeft className="mr-1 h-3 w-3" />
-                  Back to home
+                  Voltar para a home
                 </Link>
               </div>
             </div>
 
             <div className="text-xs text-gray-500 text-center">
-              You will be redirected to PagBank's secure authorization page
+              Você será redirecionado para a página de autorização segura do PagBank
             </div>
           </CardContent>
         </Card>

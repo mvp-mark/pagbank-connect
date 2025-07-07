@@ -12,36 +12,36 @@ export default function DocsPage() {
         <div className="mb-8">
           <Link href="/" className="inline-flex items-center text-sm text-gray-500 hover:text-gray-700 mb-4">
             <ArrowLeft className="mr-1 h-3 w-3" />
-            Back to home
+            Voltar para o início
           </Link>
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Integration Documentation</h1>
-          <p className="text-gray-600">Learn how to integrate with PagBank Connect</p>
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">Documentação de Integração</h1>
+          <p className="text-gray-600">Aprenda como integrar com o PagBank Connect</p>
         </div>
 
         <div className="max-w-4xl mx-auto space-y-8">
           {/* Getting Started */}
           <Card>
             <CardHeader>
-              <CardTitle>Getting Started</CardTitle>
-              <CardDescription>Follow these steps to set up PagBank Connect integration</CardDescription>
+              <CardTitle>Primeiros Passos</CardTitle>
+              <CardDescription>Siga estes passos para configurar a integração com o PagBank Connect</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="space-y-4">
                 <div className="border-l-4 border-blue-500 pl-4">
-                  <h3 className="font-semibold">1. Register Your Application</h3>
+                  <h3 className="font-semibold">1. Cadastre sua aplicação</h3>
                   <p className="text-sm text-gray-600">
-                    Create a new application in the PagBank Developer Portal to get your client credentials.
+                    Crie uma nova aplicação no Portal do Desenvolvedor PagBank para obter suas credenciais de cliente.
                   </p>
                 </div>
                 <div className="border-l-4 border-blue-500 pl-4">
-                  <h3 className="font-semibold">2. Configure Environment Variables</h3>
+                  <h3 className="font-semibold">2. Configure as variáveis de ambiente</h3>
                   <p className="text-sm text-gray-600">
-                    Set up your environment variables with the client ID and secret.
+                    Configure suas variáveis de ambiente com o client ID e o secret.
                   </p>
                 </div>
                 <div className="border-l-4 border-blue-500 pl-4">
-                  <h3 className="font-semibold">3. Implement OAuth Flow</h3>
-                  <p className="text-sm text-gray-600">Use the authorization code flow to obtain access tokens.</p>
+                  <h3 className="font-semibold">3. Implemente o fluxo OAuth</h3>
+                  <p className="text-sm text-gray-600">Use o fluxo de código de autorização para obter tokens de acesso.</p>
                 </div>
               </div>
             </CardContent>
@@ -52,23 +52,23 @@ export default function DocsPage() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Code className="h-5 w-5" />
-                Environment Variables
+                Variáveis de Ambiente
               </CardTitle>
-              <CardDescription>Required environment variables for your application</CardDescription>
+              <CardDescription>Variáveis de ambiente necessárias para sua aplicação</CardDescription>
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
                 <div className="bg-gray-100 p-4 rounded-lg font-mono text-sm">
                   <div className="space-y-1">
-                    <div>PAGBANK_CLIENT_ID=your_client_id</div>
-                    <div>PAGBANK_CLIENT_SECRET=your_client_secret</div>
+                    <div>PAGBANK_CLIENT_ID=seu_client_id</div>
+                    <div>PAGBANK_CLIENT_SECRET=seu_client_secret</div>
                     <div>PAGBANK_REDIRECT_URI=http://localhost:3000/auth/callback</div>
-                    <div>NEXT_PUBLIC_PAGBANK_CLIENT_ID=your_client_id</div>
+                    <div>NEXT_PUBLIC_PAGBANK_CLIENT_ID=seu_client_id</div>
                     <div>NEXT_PUBLIC_REDIRECT_URI=http://localhost:3000/auth/callback</div>
                   </div>
                 </div>
                 <p className="text-sm text-gray-600">
-                  Replace the placeholder values with your actual PagBank application credentials.
+                  Substitua os valores de exemplo pelas credenciais reais da sua aplicação PagBank.
                 </p>
               </div>
             </CardContent>
@@ -77,8 +77,8 @@ export default function DocsPage() {
           {/* API Endpoints */}
           <Card>
             <CardHeader>
-              <CardTitle>API Endpoints</CardTitle>
-              <CardDescription>Key PagBank API endpoints used in this integration</CardDescription>
+              <CardTitle>Endpoints da API</CardTitle>
+              <CardDescription>Principais endpoints da API PagBank usados nesta integração</CardDescription>
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
@@ -87,21 +87,21 @@ export default function DocsPage() {
                     <Badge variant="secondary">GET</Badge>
                     <code className="text-sm">https://connect.pagseguro.uol.com.br/oauth2/authorize</code>
                   </div>
-                  <p className="text-sm text-gray-600">Authorization endpoint for OAuth flow</p>
+                  <p className="text-sm text-gray-600">Endpoint de autorização para o fluxo OAuth</p>
                 </div>
                 <div className="border rounded-lg p-4">
                   <div className="flex items-center gap-2 mb-2">
                     <Badge variant="secondary">POST</Badge>
                     <code className="text-sm">https://api.pagseguro.com/oauth2/token</code>
                   </div>
-                  <p className="text-sm text-gray-600">Token exchange endpoint</p>
+                  <p className="text-sm text-gray-600">Endpoint de troca de token</p>
                 </div>
                 <div className="border rounded-lg p-4">
                   <div className="flex items-center gap-2 mb-2">
                     <Badge variant="secondary">GET</Badge>
                     <code className="text-sm">https://api.pagseguro.com/accounts/me</code>
                   </div>
-                  <p className="text-sm text-gray-600">Get account information</p>
+                  <p className="text-sm text-gray-600">Obter informações da conta</p>
                 </div>
               </div>
             </CardContent>
@@ -110,13 +110,13 @@ export default function DocsPage() {
           {/* Code Examples */}
           <Card>
             <CardHeader>
-              <CardTitle>Code Examples</CardTitle>
-              <CardDescription>Sample code for common integration scenarios</CardDescription>
+              <CardTitle>Exemplos de Código</CardTitle>
+              <CardDescription>Código de exemplo para cenários comuns de integração</CardDescription>
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
                 <div>
-                  <h3 className="font-semibold mb-2">Making API Requests</h3>
+                  <h3 className="font-semibold mb-2">Fazendo Requisições à API</h3>
                   <div className="bg-gray-100 p-4 rounded-lg font-mono text-sm overflow-x-auto">
                     <pre>{`const response = await fetch('https://api.pagseguro.com/accounts/me', {
   headers: {
@@ -129,20 +129,20 @@ const accountData = await response.json()`}</pre>
                   </div>
                 </div>
                 <div>
-                  <h3 className="font-semibold mb-2">Handling Webhooks</h3>
+                  <h3 className="font-semibold mb-2">Tratando Webhooks</h3>
                   <div className="bg-gray-100 p-4 rounded-lg font-mono text-sm overflow-x-auto">
                     <pre>{`export async function POST(request: NextRequest) {
   const signature = request.headers.get('x-pagbank-signature')
   const payload = await request.text()
   
-  // Verify webhook signature
+  // Verificar assinatura do webhook
   if (!verifySignature(payload, signature)) {
-    return NextResponse.json({ error: 'Invalid signature' }, { status: 401 })
+    return NextResponse.json({ error: 'Assinatura inválida' }, { status: 401 })
   }
   
-  // Process webhook data
+  // Processar dados do webhook
   const data = JSON.parse(payload)
-  // Handle the webhook event...
+  // Lidar com o evento do webhook...
   
   return NextResponse.json({ received: true })
 }`}</pre>
@@ -155,8 +155,8 @@ const accountData = await response.json()`}</pre>
           {/* External Resources */}
           <Card>
             <CardHeader>
-              <CardTitle>External Resources</CardTitle>
-              <CardDescription>Additional resources and documentation</CardDescription>
+              <CardTitle>Recursos Externos</CardTitle>
+              <CardDescription>Recursos e documentações adicionais</CardDescription>
             </CardHeader>
             <CardContent>
               <div className="grid sm:grid-cols-2 gap-4">
@@ -168,7 +168,7 @@ const accountData = await response.json()`}</pre>
                     className="flex items-center gap-2"
                   >
                     <ExternalLink className="h-4 w-4" />
-                    Official Documentation
+                    Documentação Oficial
                   </a>
                 </Button>
                 <Button variant="outline" asChild>
@@ -179,7 +179,7 @@ const accountData = await response.json()`}</pre>
                     className="flex items-center gap-2"
                   >
                     <ExternalLink className="h-4 w-4" />
-                    API Reference
+                    Referência da API
                   </a>
                 </Button>
                 <Button variant="outline" asChild>
@@ -190,7 +190,7 @@ const accountData = await response.json()`}</pre>
                     className="flex items-center gap-2"
                   >
                     <ExternalLink className="h-4 w-4" />
-                    Webhooks Guide
+                    Guia de Webhooks
                   </a>
                 </Button>
                 <Button variant="outline" asChild>
@@ -201,7 +201,7 @@ const accountData = await response.json()`}</pre>
                     className="flex items-center gap-2"
                   >
                     <ExternalLink className="h-4 w-4" />
-                    Support Center
+                    Central de Suporte
                   </a>
                 </Button>
               </div>
